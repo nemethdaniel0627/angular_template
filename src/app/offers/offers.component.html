@@ -1,0 +1,42 @@
+<div class="text-center d-flex align-items-center flex-column">
+  <h1>Ajánlataink</h1>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="kategoriaNev">
+      <th mat-header-cell *matHeaderCellDef> Kategória </th>
+      <td mat-cell *matCellDef="let element"> {{element.kategoriaNev}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="leiras">
+      <th mat-header-cell *matHeaderCellDef> Leírás </th>
+      <td mat-cell *matCellDef="let element"> {{element.leiras}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="hirdetesDatuma">
+      <th mat-header-cell *matHeaderCellDef> Hírdetés dátuma </th>
+      <td mat-cell *matCellDef="let element"> {{element.hirdetesDatuma}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="tehermentes">
+      <th mat-header-cell *matHeaderCellDef> Tehermentes</th>
+      <td mat-cell *matCellDef="let element">
+        <span *ngIf="element.tehermentes" class="text-success fw-bold">Igen</span>
+        <span *ngIf="!element.tehermentes" class="text-danger fw-bold">Nem</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="kepUrl">
+      <th mat-header-cell *matHeaderCellDef> Fénykép </th>
+      <td mat-cell *matCellDef="let element">
+        <img [src]="element.kepUrl">
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

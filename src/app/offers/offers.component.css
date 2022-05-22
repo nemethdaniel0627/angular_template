@@ -1,0 +1,12 @@
+table {
+  width: 90%;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.3);
+}
+
+table *{
+  text-align: center;
+}
+
+table img {
+  height: 150px;
+}
